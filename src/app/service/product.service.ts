@@ -4,19 +4,18 @@ import { Observable } from 'rxjs';
 import { Product } from '../model/product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  jsonUrl: string = 'http://localhost:3000/products';
 
-  jsonUrl: string = 'http://localhost:3000';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getAll() : Observable<Product[]> {
+  getAll(): Observable<Product[]> {
     return this.http.get<Product[]>(this.jsonUrl);
   }
 
-  getOne(id: string | number) : Observable<Product> {
+  getOne(id: string | number): Observable<Product> {
     return this.http.get<Product>(`${this.jsonUrl}/${id}`);
   }
 }

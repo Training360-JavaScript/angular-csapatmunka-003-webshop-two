@@ -1,1 +1,13 @@
-<p>home works!</p>
+<h5 class="text-center pt-3 pb-2">Featured</h5>
+<div class="container py-4 featured h-25 d-flex justify-content-center">
+  <div class="row">
+    <app-product-pager [products]="productList"></app-product-pager>
+  </div>
+</div>
+
+<h5 class="discount text-center mb-5">Discount</h5>
+<div class="container min-vh-100 d-flex justify-content-center">
+  <div class="row">
+    <app-product-pager [products]="discountList"></app-product-pager>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.card {
+  max-height: fit-content;
+}
+.card-img-top {
+  min-height: 15rem;
+  max-height: 15rem;
+  object-fit: contain;
+}
+
+.card-body {
+  height: 10rem !important;
+}
+
+.discount {
+  margin-top: 8rem;
+}
