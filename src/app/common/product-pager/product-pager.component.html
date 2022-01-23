@@ -1,1 +1,4 @@
-<p>product-pager works!</p>
+<div class="col-12 d-flex flex-row flex-wrap justify-content-center m-0 p-0">
+  <app-product-card [product]="product" *ngFor="let product of featuredProducts" class="mb-2">
+  </app-product-card>
+</div>
