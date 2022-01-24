@@ -1,7 +1,32 @@
-<div class="container featured d-flex justify-content-center">
+<!-- <div class="container featured d-flex justify-content-center">
   <div class="row">
     <div *ngFor="let product of productList">
       <app-product-card [product]="product"></app-product-card>
     </div>
+  </div>
+</div> -->
+
+<div class="row justify-content-center">
+  <div class="col4">
+    <form class="d-flex">
+      <input
+        class="form-control me-2"
+        [(ngModel)]="phrase"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <app-product-card
+      [product]="product"
+      *ngFor="let product of products | filter: phrase"
+    >
+    </app-product-card>
   </div>
 </div>
