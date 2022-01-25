@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../../model/product';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -7,10 +6,6 @@ import { Product } from '../../model/product';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  @Input() products: Product[] = [];
-
-  phrase: string = '';
-
   constructor() {}
 
   ngOnInit(): void {}

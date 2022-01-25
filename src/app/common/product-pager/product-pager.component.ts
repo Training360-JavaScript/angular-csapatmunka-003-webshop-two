@@ -1,5 +1,4 @@
-import { Product } from './../../model/product';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-product-pager',
@@ -7,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-pager.component.scss'],
 })
 export class ProductPagerComponent implements OnInit {
-  @Input() products: Product[] = [];
   constructor() {}
 
   ngOnInit(): void {}
