@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col4">
+  <div class="col-4">
     <form class="d-flex">
       <input
         name="search"
@@ -15,8 +15,9 @@
   </div>
 </div>
 
-<div class="row d-flex justify-content-center">
-  <div *ngFor="let product of products">
-    <app-product-card [product]="product"> </app-product-card>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <app-product-card *ngFor="let product of products" [product]="product">
+    </app-product-card>
   </div>
 </div>
