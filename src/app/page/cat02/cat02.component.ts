@@ -21,7 +21,7 @@ export class Cat02Component implements OnInit {
     this.productService.getAll().subscribe(
       (product) =>
         (this.calligraphyFeatured = Object.values(product)
-          .filter((item) => item.catId == 1)
+          .filter((item) => item.catId == 2)
           .filter((item) => item.featured == true)
           .sort((a, b) => 0.5 - Math.random())
           .slice(0, 5))
@@ -31,7 +31,7 @@ export class Cat02Component implements OnInit {
       .subscribe(
         (product) =>
           (this.calligraphyList = Object.values(product).filter(
-            (item) => item.catId == 1
+            (item) => item.catId == 2
           ))
       );
   }

@@ -1,4 +1,5 @@
 export class Product {
+  [key: string]: any;
   id: number = 0;
   catId: number = 0;
   name: string = '';
@@ -9,7 +10,7 @@ export class Product {
   featured: boolean = false;
   active: boolean = true;
 
-  constructor(id: number, catId: number, name: string, description: string,
+  /*constructor(id: number, catId: number, name: string, description: string,
     image: string, price: number, stock: number, featured: boolean, active: boolean) {
       this.id = id;
       this.catId = catId;
@@ -20,5 +21,5 @@ export class Product {
       this.stock = stock;
       this. featured = featured;
       this.active = active;
-    }
+    }*/
 }

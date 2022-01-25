@@ -10,7 +10,7 @@ export interface IMenuItem {
   providedIn: 'root',
 })
 export class ConfigService {
-  appName: string = 'Sample Webshop';
+  appName: string = 'Webshop';
 
   menuItems: IMenuItem[] = [
     { text: 'Home', link: '/', icon: 'home' },

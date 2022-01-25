@@ -9,17 +9,20 @@ import { Product } from '../../model/product';
 export class ProductListComponent implements OnInit {
   @Input() products: Product[] = [];
 
+  keys: string[] = Object.keys(new Product()).filter(item => item == "name" || item == "price" || item == "stock" || item == "featured" || item == "active" );
+
   phrase: string = '';
+
+  filterKey: string = '';
+
+  sorterKey: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  Search(): void {
-    if (this.phrase !== '') {
-      this.products = this.products.filter((result) => {
-        return result.name.toLowerCase().includes(this.phrase.toLowerCase());
-      });
-    }
+  onSorterSelect(key: string): void {
+    this.sorterKey = key;
   }
+
 }
