@@ -2,8 +2,10 @@
   <div class="col4">
     <form class="d-flex">
       <input
+        name="search"
         class="form-control me-2"
         [(ngModel)]="phrase"
+        (keyup)="Search()"
         type="search"
         placeholder="Search"
         aria-label="Search"
@@ -13,12 +15,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-4">
-    <app-product-card
-      [product]="product"
-      *ngFor="let product of products | filter: phrase"
-    >
-    </app-product-card>
+<div class="row d-flex justify-content-center">
+  <div *ngFor="let product of products">
+    <app-product-card [product]="product"> </app-product-card>
   </div>
 </div>

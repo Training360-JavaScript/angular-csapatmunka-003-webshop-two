@@ -14,4 +14,12 @@ export class ProductListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  Search(): void {
+    if (this.phrase !== '') {
+      this.products = this.products.filter((result) => {
+        return result.name.toLowerCase().includes(this.phrase.toLowerCase());
+      });
+    }
+  }
 }
