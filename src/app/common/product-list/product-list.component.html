@@ -1,22 +1,30 @@
 <div class="row justify-content-center">
-  <div class="col4">
+  <div class="col-4">
+    <select [(ngModel)]="filterKey" class="form-control">
+      <option value="">All products</option>
+      <option *ngFor='let key of keys' [value]="key">{{ key | titlecase }}</option>
+    </select>
+  </div>
+  <div class="col-8">
     <form class="d-flex">
-      <input
-        name="search"
-        class="form-control me-2"
-        [(ngModel)]="phrase"
-        (keyup)="Search()"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input name="search" class="form-control me-2" [(ngModel)]="phrase" type="search" placeholder="Search"
+        aria-label="Search" />
     </form>
   </div>
 </div>
 
+<div class="row my-3">
+  <div class="col-12 d-flex flex-md-row flex-column">
+    <p class="sorterlink mr-4" (click)="onSorterSelect('name')">Name</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('price')">Price</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('stock')">Stock</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('featured')">Featured</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('active')">Active</p>
+  </div>
+</div>
+
 <div class="row d-flex justify-content-center">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products | filter:phrase:filterKey | sorter:sorterKey">
     <app-product-card [product]="product"> </app-product-card>
   </div>
 </div>

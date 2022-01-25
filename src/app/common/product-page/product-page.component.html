@@ -1,0 +1,29 @@
+<div class="row">
+  <div *ngIf="product$ | async as product" class="col-6 offset-3">
+    <img [src]="product.image" [alt]="product.name" />
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3> {{ product.name }}</h3>
+        </div>
+        <div class="col-12">
+          <p><strong>Description:</strong> {{ product.description }}</p>
+        </div>
+        <div class="col-12">
+          <p><strong>Price:</strong> {{ product.price }} HUF</p>
+        </div>
+        <div class="col-12">
+          <p><strong>On Stock:</strong> {{ product.stock }}</p>
+        </div>
+        <div class="col-12">
+          <p *ngIf="product.featured == true"> Featured</p>
+        </div>
+        <div class="col-12">
+          <p *ngIf="product.active == true"> Active</p>
+          <p *ngIf="product.active == false"> Inactive</p>
+        </div>
+        <button [routerLink]="['/cat0'+ product.catId ]" class="btn btn-info btn-block"> Button</button>
+      </div>
+    </div>
+  </div>
+</div>
