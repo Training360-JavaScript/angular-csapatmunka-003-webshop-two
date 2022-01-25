@@ -1,1 +1,21 @@
-<p>product-card works!</p>
+<div *ngIf="product" class="card" style="width: 18rem">
+  <img [src]="product.image" class="card-img-top h-50" [alt]="product.name" />
+  <div
+    class="card-body d-flex justify-content-center align-items-left flex-column"
+  >
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+    <div class="container priceAndStock d-felx">
+      <div class="row">
+        <h3>Price:</h3>
+        <div class="d-flex align-items-center">
+          <p>{{ product.price }} HUF</p>
+        </div>
+        <h3>On Stock:</h3>
+        <p>{{ product.stock }}</p>
+      </div>
+    </div>
+  </div>
+</div>
