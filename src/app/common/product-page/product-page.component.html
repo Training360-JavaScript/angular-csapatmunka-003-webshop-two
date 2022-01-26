@@ -1,7 +1,7 @@
 <div class="row">
   <div *ngIf="product$ | async as product" class="col-6 offset-3">
     <img [src]="product.image" [alt]="product.name" />
-    <div class="container">
+    <div class="container text-center">
       <div class="row">
         <div class="col-12">
           <h3> {{ product.name }}</h3>
@@ -22,7 +22,7 @@
           <p *ngIf="product.active == true"> Active</p>
           <p *ngIf="product.active == false"> Inactive</p>
         </div>
-        <button [routerLink]="['/cat0'+ product.catId ]" class="btn btn-info btn-block"> Button</button>
+        <button [routerLink]="['/cat0'+ product.catId ]" class="btn btn-dark btn-block" mx-5>Back</button>
       </div>
     </div>
   </div>
