@@ -10,11 +10,11 @@ export interface IMenuItem {
   providedIn: 'root',
 })
 export class ConfigService {
-  appName: string = 'Webshop';
+  appName: string = 'Fountain Pens';
 
   menuItems: IMenuItem[] = [
     { text: 'Home', link: '/', icon: 'home' },
-    { text: 'Business', link: '/cat01' },
+    { text: 'Business & Casual', link: '/cat01' },
     { text: 'Calligraphy', link: '/cat02' },
   ];
 
