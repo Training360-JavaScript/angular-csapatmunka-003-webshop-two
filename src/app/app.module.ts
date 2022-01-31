@@ -16,6 +16,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
 import { ProductComponent } from './page/product/product.component';
 import { ProductPageComponent } from './common/product-page/product-page.component';
+import { AdminComponent } from './page/admin/admin.component';
+import { DataEditorComponent } from './page/admin/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ProductPageComponent } from './common/product-page/product-page.compone
     SorterPipe,
     ProductComponent,
     ProductPageComponent,
+    AdminComponent,
+    DataEditorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

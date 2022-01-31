@@ -1,0 +1,57 @@
+<div class="row justify-content-center py-3">
+  <div class="col-4">
+    <select [(ngModel)]="filterKey" class="form-control">
+      <option value="">All products</option>
+      <option *ngFor="let key of keys" [value]="key">
+        {{ key | titlecase }}
+      </option>
+    </select>
+  </div>
+  <div class="col-8">
+    <form class="d-flex">
+      <input
+        name="search"
+        class="form-control me-2"
+        [(ngModel)]="phrase"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </form>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>CategoryID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Featured</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList | async">
+      <th>{{ product.id }}</th>
+      <th>
+        <input type="number" [(ngModel)]="product.catId" />
+      </th>
+      <th><input type="text" [(ngModel)]="product.name" /></th>
+      <th><input type="text" [(ngModel)]="product.description" /></th>
+      <th><input type="text" [(ngModel)]="product.image" /></th>
+      <th><input type="number" [(ngModel)]="product.price" /></th>
+      <th><input type="number" [(ngModel)]="product.stock" /></th>
+      <th><input type="text" [(ngModel)]="product.featured" /></th>
+      <th><input type="text" [(ngModel)]="product.active" /></th>
+      <div class="d-flex flex-row">
+        <button class="btn btn-success mt-2">confirm</button>
+        <button class="btn btn-warning mt-2 mx-2">edit</button>
+        <button class="btn btn-danger mt-2">delete</button>
+      </div>
+    </tr>
+  </tbody>
+</table>
