@@ -20,6 +20,7 @@ export class ProductService {
   }
 
   add(pen: Product): Observable<any> {
+    pen['disabled'] = true
     return this.http.post<Observable<any>>(this.jsonUrl, pen);
   }
 

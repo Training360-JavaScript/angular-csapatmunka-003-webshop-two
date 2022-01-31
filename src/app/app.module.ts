@@ -17,7 +17,11 @@ import { SorterPipe } from './pipe/sorter.pipe';
 import { ProductComponent } from './page/product/product.component';
 import { ProductPageComponent } from './common/product-page/product-page.component';
 import { AdminComponent } from './page/admin/admin.component';
-import { DataEditorComponent } from './page/admin/data-editor/data-editor.component';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { EditProductComponent } from './page/edit-product/edit-product.component';
+import { AdminEditProductComponent } from './common/admin-edit-product/admin-edit-product.component';
+import { NewProductComponent } from './common/new-product/new-product.component';
+import { AddProductComponent } from './page/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { DataEditorComponent } from './page/admin/data-editor/data-editor.compon
     ProductPageComponent,
     AdminComponent,
     DataEditorComponent,
+    EditProductComponent,
+    AdminEditProductComponent,
+    NewProductComponent,
+    AddProductComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
