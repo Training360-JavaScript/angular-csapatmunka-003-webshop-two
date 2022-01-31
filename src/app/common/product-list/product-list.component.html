@@ -31,7 +31,7 @@
 </div>
 
 <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-5 d-flex justify-content-between">
-  <div *ngFor="let product of products | filter:phrase:filterKey | sorter:sorterKey">
+  <div *ngFor="let product of products | filter:phrase:filterKey | sorter:sorterKey" class="mb-2">
     <app-product-card [product]="product"> </app-product-card>
   </div>
 </div>
