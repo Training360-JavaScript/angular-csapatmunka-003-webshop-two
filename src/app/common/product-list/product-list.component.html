@@ -13,38 +13,71 @@
   </div>
 </div>
 
-<div class="container-fluid bg-dark">
+<div class="container bg-dark">
   <div class="row bg-dark text-white">
     <div class="col-12 d-flex flex-md-row flex-column text-center justify-content-between align-items-center mx-0">
-      <p>Name</p>
-      <p class="sorterlink mr-4" (click)="onSorterSelect('name')"><i class="fa fa-caret-up" aria-hidden="true"></i>
-      </p>
-      <p class="sorterlink mr-4" (click)="onBackSorterSelect('name')"><i class="fa fa-caret-down"
-          aria-hidden="true"></i>
-      </p>
-      <p>Price</p>
-      <p class="sorterlink mr-4" (click)="onSorterSelect('price')"><i class="fa fa-caret-up" aria-hidden="true"></i>
-      </p>
-      <p class="sorterlink mr-4" (click)="onBackSorterSelect('price')"><i class="fa fa-caret-down"
-          aria-hidden="true"></i>
-      </p>
-      <p>Stock</p>
-      <p class="sorterlink mr-4" (click)="onSorterSelect('stock')"><i class="fa fa-caret-up" aria-hidden="true"></i>
-      </p>
-      <p class="sorterlink mr-4" (click)="onBackSorterSelect('stock')"><i class="fa fa-caret-down"
-          aria-hidden="true"></i>
-      </p>
-      <p>Featured</p>
-      <p class="sorterlink mr-4" (click)="onSorterSelect('featured')"><i class="fa fa-caret-up" aria-hidden="true"></i>
-      </p>
-      <p class="sorterlink mr-4" (click)="onBackSorterSelect('featured')"><i class="fa fa-caret-down"
-          aria-hidden="true"></i>
-      </p>
-      <p>Active</p>
-      <p class="sorterlink mr-4" (click)="onSorterSelect('active')"><i class="fa fa-caret-down" aria-hidden="true"></i>
-      </p>
-      <p class="sorterlink mr-4" (click)="onBackSorterSelect('active')"><i class="fa fa-caret-up"
-          aria-hidden="true"></i>
+      <div class="col-2 d-flex flex-row align-items-center">
+        <div class="col-10">
+          <p>Name</p>
+        </div>
+        <div class="col-2">
+          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('name')"><i class="fa fa-caret-up"
+              aria-hidden="true"></i>
+          </p>
+          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('name')"><i class="fa fa-caret-down"
+              aria-hidden="true"></i></p>
+        </div>
+      </div>
+      <div class="col-2 d-flex flex-row align-items-center">
+        <div class="col-10">
+          <p>Price</p>
+        </div>
+        <div class="col-2">
+          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('price')"><i class="fa fa-caret-up" aria-hidden="true"></i>
+          </p>
+          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('price')"><i class="fa fa-caret-down"
+              aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+      <div class="col-2 d-flex flex-row align-items-center">
+        <div class="col-10">
+          <p>Stock</p>
+        </div>
+        <div class="col-2">
+          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('stock')"><i class="fa fa-caret-up" aria-hidden="true"></i>
+          </p>
+          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('stock')"><i class="fa fa-caret-down"
+              aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+      <div class="col-2 d-flex flex-row align-items-center">
+        <div class="col-10">
+          <p>Featured</p>
+        </div>
+        <div class="col-2">
+          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('featured')"><i class="fa fa-caret-up"
+              aria-hidden="true"></i>
+          </p>
+          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('featured')"><i class="fa fa-caret-down"
+              aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+      <div class="col-2 d-flex flex-row align-items-center">
+        <div class="col-10">
+          <p>Active</p>
+        </div>
+        <div class="col-2">
+          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('active')"><i class="fa fa-caret-up"
+              aria-hidden="true"></i>
+          </p>
+          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('active')"><i class="fa fa-caret-down"
+              aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

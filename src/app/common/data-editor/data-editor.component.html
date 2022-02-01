@@ -1,4 +1,4 @@
-<div class="row justify-content-center py-3 mb-5">
+<div class="row justify-content-center py-3 mb-5 px-0 mx-0">
   <div class="col-4">
     <select [(ngModel)]="filterKey" class="form-control">
       <option value="">All products</option>
@@ -7,40 +7,41 @@
       </option>
     </select>
   </div>
-  <div class="col-8">
+  <div class="col-8 px-0">
     <form class="d-flex">
-      <input name="search" class="form-control me-2" [(ngModel)]="phrase" type="search" placeholder="Search"
+      <input name="search" class="form-control" [(ngModel)]="phrase" type="search" placeholder="Search"
         aria-label="Search" />
     </form>
   </div>
 </div>
 
-<table class="table table-striped">
+<table class="table bg-light">
   <thead>
-    <tr class="text-center">
-      <th>#</th>
-      <th>CategoryID</th>
-      <th>Name</th>
+    <tr class="text-center admin">
+      <th (click)="onColumnSorter('id')">#</th>
+      <th (click)="onColumnSorter('catId')">CategoryID</th>
+      <th (click)="onColumnSorter('name')">Name</th>
       <th>Description</th>
       <th>Image</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th>Featured</th>
-      <th>Active</th>
+      <th (click)="onColumnSorter('price')">Price</th>
+      <th (click)="onColumnSorter('stock')">Stock</th>
+      <th (click)="onColumnSorter('featured')">Featured</th>
+      <th (click)="onColumnSorter('active')">Active</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList | async | filter:phrase:filterKey">
+    <tr *ngFor="let product of productList | async | filter:phrase:filterKey | sorter:sorterKey:direction">
       <td>{{ product.id }}</td>
-      <td><input class="catId text-right" type="number" [(ngModel)]="product.catId" [disabled]="product['disabled']">
+      <td><input class="catId text-right bg-white rounded" type="number" [(ngModel)]="product.catId" [disabled]="product['disabled']">
       </td>
-      <td><input type=" text" [(ngModel)]="product.name" [disabled]="product['disabled']">
+      <td><input class="bg-white rounded" type=" text" [(ngModel)]="product.name" [disabled]="product['disabled']">
       </td>
-      <td><input type="text" [(ngModel)]="product.description" [disabled]="product['disabled']"></td>
-      <td><input type="text" [(ngModel)]="product.image" [disabled]="product['disabled']"></td>
-      <td><input class="price text-right" type="number" [(ngModel)]="product.price" [disabled]="product['disabled']">
+      <td><input class="bg-white rounded" type="text" [(ngModel)]="product.description" [disabled]="product['disabled']"></td>
+      <td><input class="bg-white rounded" type="text" [(ngModel)]="product.image" [disabled]="product['disabled']"></td>
+      <td><input class="price text-right bg-white rounded" type="number" [(ngModel)]="product.price" [disabled]="product['disabled']">
       </td>
-      <td><input class="stock text-right" type="number" [(ngModel)]="product.stock" [disabled]="product['disabled']">
+      <td><input class="stock text-right bg-white rounded" type="number" [(ngModel)]="product.stock" [disabled]="product['disabled']">
       </td>
       <td>
         <div class="custom-control custom-switch d-flex justify-content-center">
@@ -58,12 +59,13 @@
       </td>
       <div class="d-flex flex-row">
         <button *ngIf="update === true" (click)="onUpdateProduct(product)"
-          class="btn btn-success mt-2 mx-2">edit</button>
+          class="btn btn-secondary mt-2 mx-2">edit</button>
         <button *ngIf="update === true" [routerLink]="['/editProduct/', product.id ]"
           class="btn btn-info mt-2">view</button>
         <button *ngIf="update === false" (click)="onSaveProduct(product)"
-          class="btn btn-warning mt-2 mx-2">save</button>
-        <button *ngIf="update === false" (click)="onDeleteProduct(product)" class="btn btn-danger mt-2">delete</button>
+          class="btn btn-info mt-2 mx-2">save</button>
+        <button *ngIf="update === false" (click)="onDeleteProduct(product)"
+        class="btn btn-danger mt-2">delete</button>
       </div>
     </tr>
   </tbody>
