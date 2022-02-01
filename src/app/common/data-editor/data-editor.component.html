@@ -17,21 +17,21 @@
 
 <table class="table bg-light">
   <thead>
-    <tr class="text-center">
-      <th>#</th>
-      <th>CategoryID</th>
-      <th>Name</th>
+    <tr class="text-center admin">
+      <th (click)="onColumnSorter('id')">#</th>
+      <th (click)="onColumnSorter('catId')">CategoryID</th>
+      <th (click)="onColumnSorter('name')">Name</th>
       <th>Description</th>
       <th>Image</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th>Featured</th>
-      <th>Active</th>
+      <th (click)="onColumnSorter('price')">Price</th>
+      <th (click)="onColumnSorter('stock')">Stock</th>
+      <th (click)="onColumnSorter('featured')">Featured</th>
+      <th (click)="onColumnSorter('active')">Active</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList | async | filter:phrase:filterKey">
+    <tr *ngFor="let product of productList | async | filter:phrase:filterKey | sorter:sorterKey:direction">
       <td>{{ product.id }}</td>
       <td><input class="catId text-right bg-white rounded" type="number" [(ngModel)]="product.catId" [disabled]="product['disabled']">
       </td>
