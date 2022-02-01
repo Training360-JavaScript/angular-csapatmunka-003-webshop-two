@@ -5,7 +5,8 @@
         <div class="col-md-4">
           <div class="form-group col-md-4">
             <img class="productImg" [src]="product.image" [alt]="product.name">
-            <input class="form-control" [(ngModel)]="product['id']" type="hidden" name="id">
+            <input class="form-control" [(ngModel)]="product['id']"
+            type="hidden" name="id">
           </div>
         </div>
         <div class="col-md-8 pl-0">
@@ -71,9 +72,9 @@
       </div>
       <input class="form-control" [(ngModel)]="product['disabled']" type="hidden" name="disabled">
       <button *ngIf="product['disabled'] == true" [disabled]="productFrom.invalid"
-        class="btn btn-success mt-3 mt-md-0 mr-3" (click)="onUpdateProduct(product)">edit</button>
+        class="btn btn-info mt-3 mt-md-0 mr-3" (click)="onUpdateProduct(product)">edit</button>
       <button *ngIf="product['disabled'] == false" [disabled]="productFrom.invalid"
-        class="btn btn-warning mt-3 mt-md-0 mr-3" (click)="onSaveProduct(product)">save</button>
+        class="btn btn-info mt-3 mt-md-0 mr-3" (click)="onSaveProduct(product)">save</button>
       <button *ngIf="product['disabled'] == false" [disabled]="productFrom.invalid"
         class="btn btn-danger mt-3 mt-md-0 mr-3" (click)="onDeleteProduct(product)">delete</button>
       <button [routerLink]="['/admin']" class="btn btn-secondary mt-3 mt-md-0" type="submit">cancel</button>
