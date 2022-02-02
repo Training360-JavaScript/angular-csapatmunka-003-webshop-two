@@ -1,0 +1,26 @@
+<div class="row mb-5">
+  <div *ngFor="let category of categoryList" class="col-12 mt-3">
+    <form #categoryFrom="ngForm" class="mb-5">
+      <h2>{{category['id']}}.category: {{category['name']}}</h2>
+      <div class="form-group">
+        <label for="categoryName">Name</label>
+        <input class="form-control" [(ngModel)]="category['name']" type="text" name="name" id="categoryName"
+          [disabled]="category.disabled" placeholder="Name of category" required>
+      </div>
+      <div class="form-group">
+        <label for="categoryDescription">Description</label>
+        <textarea class="form-control" [(ngModel)]="category['description']" type="text" name="description"
+          id="categoryDescription" rows="5" [disabled]="category.disabled" placeholder="Lorem ipsum"
+          required></textarea>
+      </div>
+      <button *ngIf="category.disabled == true" [disabled]="categoryFrom.invalid"
+        class="btn btn-success mt-3 mt-md-0 mr-3" (click)="onUpdateCategory(category)">edit</button>
+      <button *ngIf="category.disabled == false" [disabled]="categoryFrom.invalid"
+        class="btn btn-info mt-3 mt-md-0 mr-3" (click)="onSaveCategory(category)">save</button>
+      <button *ngIf="category.disabled == false" [disabled]="categoryFrom.invalid"
+        class="btn btn-warning mt-3 mt-md-0 mr-3" (click)="onDeleteCategory(category)">delete</button>
+      <button *ngIf="category.disabled == false" (click)="onCancel(category)" class=" btn btn-secondary mt-3 mt-md-0"
+        type="submit">cancel</button>
+    </form>
+  </div>
+</div>

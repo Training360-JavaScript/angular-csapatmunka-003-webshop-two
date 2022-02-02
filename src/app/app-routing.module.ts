@@ -1,3 +1,4 @@
+import { EditCategoryComponent } from './page/edit-category/edit-category.component';
 import { AdminComponent } from './page/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'newProduct',
     component: AddProductComponent,
+  },
+  {
+    path: 'editCategory',
+    component: EditCategoryComponent,
   },
   {
     path: '**',

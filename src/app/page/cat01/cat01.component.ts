@@ -12,7 +12,8 @@ import { Category } from 'src/app/model/category';
 export class Cat01Component implements OnInit {
   businessFeatured: Product[] = [];
   businessList: Product[] = [];
-  category: Category = this.categoryService.list[0];
+
+  category: Category = new Category()
 
   constructor(
     private productService: ProductService,
@@ -34,7 +35,12 @@ export class Cat01Component implements OnInit {
             (item) => item.catId == 1
           ))
       );
-  }
 
-  ngOnInit(): void {}
-}
+    }
+
+    ngOnInit(): void {
+      this.categoryService.getOne(1).subscribe(
+        category => this.category = category
+      )
+    }
+  }

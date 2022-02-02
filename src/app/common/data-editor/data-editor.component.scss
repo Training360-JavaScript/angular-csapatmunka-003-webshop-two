@@ -21,10 +21,18 @@
   width: 4.5rem !important;
 }
 
-.active {
+.activeInput {
   width: 4.5rem !important;
 }
 
 .admin th {
   cursor: pointer;
+}
+
+.hover {
+
+  &:hover {
+    background-color: #6c757d;
+  }
+
 }
