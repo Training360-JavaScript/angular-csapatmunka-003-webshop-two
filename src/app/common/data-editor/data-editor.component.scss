@@ -1,3 +1,11 @@
+.ppp {
+  cursor: pointer;
+}
+
+.page-link {
+  cursor: pointer;
+}
+
 .table td {
   padding: 0.7rem 0.4rem !important;
 }
@@ -30,9 +38,7 @@
 }
 
 .hover {
-
   &:hover {
     background-color: #6c757d;
   }
-
 }

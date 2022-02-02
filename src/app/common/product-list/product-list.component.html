@@ -2,77 +2,109 @@
   <div class="col-4">
     <select [(ngModel)]="filterKey" class="form-control">
       <option value="">All products</option>
-      <option *ngFor='let key of keys' [value]="key">{{ key | titlecase }}</option>
+      <option *ngFor="let key of keys" [value]="key">
+        {{ key | titlecase }}
+      </option>
     </select>
   </div>
   <div class="col-8">
     <form class="d-flex">
-      <input name="search" class="form-control me-2" [(ngModel)]="phrase" type="search" placeholder="Search"
-        aria-label="Search" />
+      <input
+        name="search"
+        class="form-control me-2"
+        [(ngModel)]="phrase"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
     </form>
   </div>
 </div>
 
 <div class="container bg-dark">
   <div class="row bg-dark text-white">
-    <div class="col-12 d-flex flex-md-row flex-column text-center justify-content-between align-items-center mx-0">
+    <div
+      class="col-12 d-flex flex-md-row flex-column text-center justify-content-between align-items-center mx-0"
+    >
       <div class="col-md-2 d-flex flex-row align-items-center">
         <div class="col-6 offset-2 col-md-10 offset-md-0">
-          <p>Name</p>
+          <span>Name</span>
         </div>
         <div class="col-3 text-left col-md-2">
-          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('name')"><i class="fa fa-caret-up"
-              aria-hidden="true"></i>
-          </p>
-          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('name')"><i class="fa fa-caret-down"
-              aria-hidden="true"></i></p>
+          <span
+            class="sorterlink mr-4 mb-0"
+            (click)="onBackSorterSelect('name')"
+          >
+            <i class="fa fa-caret-up" aria-hidden="true"></i>
+          </span>
+          <span class="sorterlink mr-4 mt-0" (click)="onSorterSelect('name')">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </span>
         </div>
       </div>
       <div class="col-md-2 d-flex flex-row align-items-center">
         <div class="col-6 offset-2 col-md-10 offset-md-0">
-          <p>Price</p>
+          <span>Price</span>
         </div>
         <div class="col-3 text-left col-md-2">
-          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('price')"><i class="fa fa-caret-up"
-              aria-hidden="true"></i>
-          </p>
-          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('price')"><i class="fa fa-caret-down"
-              aria-hidden="true"></i>
-          </p>
+          <span
+            class="sorterlink mr-4 mb-0"
+            (click)="onBackSorterSelect('price')"
+          >
+            <i class="fa fa-caret-up" aria-hidden="true"></i>
+          </span>
+          <span class="sorterlink mr-4 mt-0" (click)="onSorterSelect('price')">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </span>
         </div>
       </div>
       <div class="col-md-2 d-flex flex-row align-items-center">
         <div class="col-6 offset-2 col-md-10 offset-md-0">
-          <p>Stock</p>
+          <span>Stock</span>
         </div>
         <div class="col-3 text-left col-md-2">
-          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('stock')"><i class="fa fa-caret-up"
-              aria-hidden="true"></i>
-          </p>
-          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('stock')"><i class="fa fa-caret-down"
-              aria-hidden="true"></i>
-          </p>
+          <span
+            class="sorterlink mr-4 mb-0"
+            (click)="onBackSorterSelect('stock')"
+          >
+            <i class="fa fa-caret-up" aria-hidden="true"></i>
+          </span>
+          <span class="sorterlink mr-4 mt-0" (click)="onSorterSelect('stock')">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </span>
         </div>
       </div>
       <div class="col-md-2 d-flex flex-row align-items-center">
         <div class="col-6 offset-2 col-md-10 offset-md-0">
-          <p>Active</p>
+          <span>Active</span>
         </div>
         <div class="col-3 text-left col-md-2">
-          <p class="sorterlink mr-4 mb-0" (click)="onBackSorterSelect('active')"><i class="fa fa-caret-up"
-              aria-hidden="true"></i>
-          </p>
-          <p class="sorterlink mr-4 mt-0" (click)="onSorterSelect('active')"><i class="fa fa-caret-down"
-              aria-hidden="true"></i>
-          </p>
+          <span
+            class="sorterlink mr-4 mb-0"
+            (click)="onBackSorterSelect('active')"
+          >
+            <i class="fa fa-caret-up" aria-hidden="true"></i>
+          </span>
+          <span class="sorterlink mr-4 mt-0" (click)="onSorterSelect('active')">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-5 d-flex justify-content-between">
-  <div *ngFor="let product of products | filter:phrase:filterKey | sorter:sorterKey:direction" class="mb-2">
+<div
+  class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-5 d-flex justify-content-between"
+>
+  <div
+    *ngFor="
+      let product of products
+        | filter: phrase:filterKey
+        | sorter: sorterKey:direction
+    "
+    class="mb-2"
+  >
     <app-product-card [product]="product"> </app-product-card>
   </div>
 </div>
