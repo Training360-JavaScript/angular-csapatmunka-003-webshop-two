@@ -1,13 +1,25 @@
-import { EditCategoryComponent } from './page/edit-category/edit-category.component';
-import { AdminComponent } from './page/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { EditCategoryComponent } from './page/edit-category/edit-category.component';
+import { AdminComponent } from './page/admin/admin.component';
 import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './page/product/product.component';
 import { EditProductComponent } from './page/edit-product/edit-product.component';
 import { AddProductComponent } from './page/add-product/add-product.component';
+
+export const routingComponents = [
+  EditCategoryComponent,
+  AdminComponent,
+  Cat01Component,
+  Cat02Component,
+  HomeComponent,
+  ProductComponent,
+  EditProductComponent,
+  AddProductComponent,
+];
 
 const routes: Routes = [
   {
