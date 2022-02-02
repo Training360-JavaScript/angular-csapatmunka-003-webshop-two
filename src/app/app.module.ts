@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AngularPaginatorModule } from 'angular-paginator'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { EditProductComponent } from './page/edit-product/edit-product.component
 import { AdminEditProductComponent } from './common/admin-edit-product/admin-edit-product.component';
 import { NewProductComponent } from './common/new-product/new-product.component';
 import { AddProductComponent } from './page/add-product/add-product.component';
+import { EditCategoryComponent } from './page/edit-category/edit-category.component';
+import { CategoryEditorComponent } from './common/category-editor/category-editor.component';
+import { NewCategoryComponent } from './common/new-category/new-category.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +46,12 @@ import { AddProductComponent } from './page/add-product/add-product.component';
     EditProductComponent,
     AdminEditProductComponent,
     NewProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditCategoryComponent,
+    CategoryEditorComponent,
+    NewCategoryComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, AngularPaginatorModule],
   providers: [],
   bootstrap: [AppComponent],
 })

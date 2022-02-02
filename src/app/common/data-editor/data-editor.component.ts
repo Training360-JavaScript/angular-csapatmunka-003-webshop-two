@@ -27,14 +27,17 @@ export class DataEditorComponent implements OnInit {
   directionPrice: number = 1;
   directionName: number = 1;
   directionStock: number = 1;
-  directionFeatured: number = 1;
-  directionActive: number = 1;
+  directionFeatured: number = -1;
+  directionActive: number = -1;
 
   productList: Observable<Product[]>;
 
   disabled: boolean = true;
 
   update:boolean = true
+
+  currentPage = 1;
+  itemsPerPage: number = 10;
 
   constructor(private ps: ProductService, private router: Router) {
     this.productList = this.ps.getAll();

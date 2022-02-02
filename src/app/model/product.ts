@@ -9,6 +9,7 @@ export class Product {
   stock: number = 0;
   featured: boolean = false;
   active: boolean = true;
+  disabled: boolean = true
 
   /*constructor(id: number, catId: number, name: string, description: string,
     image: string, price: number, stock: number, featured: boolean, active: boolean) {

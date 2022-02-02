@@ -12,7 +12,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class Cat02Component implements OnInit {
   calligraphyFeatured: Product[] = [];
   calligraphyList: Product[] = [];
-  category: Category = this.categoryService.list[1];
+
+  category: Category = new Category()
 
   constructor(
     private productService: ProductService,
@@ -36,5 +37,9 @@ export class Cat02Component implements OnInit {
       );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.categoryService.getOne(2).subscribe(
+      category => this.category = category
+    )
+  }
 }
